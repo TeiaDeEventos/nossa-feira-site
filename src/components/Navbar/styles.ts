@@ -38,7 +38,7 @@ export const Logo = styled(NavLink)`
   transition: opacity ${({ theme }) => theme.transitions.fast};
 
   img {
-    height: 50px;
+    height: 60px;
     width: auto;
     display: block;
   }

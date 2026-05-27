@@ -233,20 +233,26 @@ export const HeroBadge = styled.span`
   gap: 6px;
 `;
 
-export const FloatingLeaf = styled.div<{
+export const FloatingImg = styled.div<{
+  $src: string;
   $top: string;
   $left: string;
   $delay: string;
+  $size?: string;
 }>`
   position: absolute;
   top: ${({ $top }) => $top};
   left: ${({ $left }) => $left};
-  font-size: 28px;
-  opacity: 0.08;
-  animation: ${float} 6s ease-in-out infinite;
+  width: ${({ $size }) => $size || "160px"};
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-image: url(${({ $src }) => $src});
+  background-size: cover;
+  background-position: center;
+  opacity: 0.18;
+  animation: ${float} 7s ease-in-out infinite;
   animation-delay: ${({ $delay }) => $delay};
   z-index: 0;
-  user-select: none;
   pointer-events: none;
 `;
 
@@ -434,7 +440,7 @@ export const AboutImgFull = styled.div<{ $src: string }>`
 // ─── Categories ───────────────────────────────────────────────────────────────
 
 export const CategoriesSection = styled.section`
-  background-color: ${({ theme }) => theme.colors.creme};
+  background-color: ${({ theme }) => theme.colors.cremeLt};
   padding: 80px 24px;
 `;
 
@@ -752,4 +758,283 @@ export const OverlayText = styled.p`
   font-weight: ${({ theme }) => theme.fontWeights.semibold};
   color: rgba(245, 241, 228, 0.5);
   letter-spacing: 0.5px;
+`;
+
+// ─── Movimenta SEBRAE ─────────────────────────────────────────────────────────
+
+export const SebraeSection = styled.section`
+  background-color: ${({ theme }) => theme.colors.cremeLt};
+  padding: 80px 24px;
+`;
+
+export const SebraeInner = styled.div`
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    flex-direction: column;
+    gap: 36px;
+  }
+`;
+
+export const SebraeImage = styled(motion.div)`
+  flex: 1;
+  min-width: 0;
+  border-radius: ${({ theme }) => theme.borderRadius.lg};
+  overflow: hidden;
+  height: 380px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform ${({ theme }) => theme.transitions.slow};
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 100%;
+    height: 260px;
+  }
+`;
+
+export const SebraeText = styled(motion.div)`
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+`;
+
+export const SebraeParagraph = styled.p`
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: 15px;
+  color: ${({ theme }) => theme.colors.preto};
+  opacity: 0.65;
+  line-height: 1.85;
+  margin-bottom: 20px;
+`;
+
+export const SebraeList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+  padding-left: 0;
+  list-style: none;
+`;
+
+export const SebraeListItem = styled.li`
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: 14px;
+  font-weight: ${({ theme }) => theme.fontWeights.semibold};
+  color: ${({ theme }) => theme.colors.preto};
+  opacity: 0.7;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+
+  &::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: ${({ theme }) => theme.colors.terracota};
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+`;
+
+export const SebraeLink = styled.a`
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: 14px;
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  color: ${({ theme }) => theme.colors.verde};
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color ${({ theme }) => theme.transitions.fast};
+  align-self: flex-start;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.verdeLt};
+  }
+`;
+
+// ─── Lotes ────────────────────────────────────────────────────────────────────
+
+export const LotesSection = styled.section`
+  background-color: ${({ theme }) => theme.colors.creme};
+  padding: 80px 24px;
+`;
+
+export const LotesInner = styled.div`
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    flex-direction: column;
+    gap: 40px;
+  }
+`;
+
+export const LotesTextCol = styled(motion.div)`
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+`;
+
+export const LotesParagraph = styled.p`
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: 15px;
+  color: ${({ theme }) => theme.colors.preto};
+  opacity: 0.65;
+  line-height: 1.85;
+  margin-bottom: 28px;
+`;
+
+export const LotesTable = styled.div`
+  display: flex;
+  flex-direction: column;
+  border-radius: ${({ theme }) => theme.borderRadius.lg};
+  overflow: hidden;
+  border: 1.5px solid rgba(44, 74, 46, 0.12);
+`;
+
+export const LoteRow = styled.div<{ $active?: boolean; $disabled?: boolean }>`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(44, 74, 46, 0.08);
+  background-color: ${({ $active, $disabled, theme }) =>
+    $active
+      ? `${theme.colors.verdeLt}22`
+      : $disabled
+        ? "rgba(0,0,0,0.03)"
+        : theme.colors.cremeLt};
+
+  &:last-child {
+    border-bottom: none;
+  }
+`;
+
+export const LoteLabel = styled.span<{
+  $active?: boolean;
+  $disabled?: boolean;
+}>`
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: 13px;
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  color: ${({ $disabled, theme }) =>
+    $disabled ? "rgba(26,26,26,0.3)" : theme.colors.verde};
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+`;
+
+export const LoteStatus = styled.span<{ $active?: boolean }>`
+  font-size: 10px;
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  font-family: ${({ theme }) => theme.fonts.body};
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: ${({ theme }) => theme.borderRadius.pill};
+  background-color: ${({ $active, theme }) =>
+    $active ? theme.colors.verde : "rgba(26,26,26,0.08)"};
+  color: ${({ $active, theme }) =>
+    $active ? theme.colors.cremeLt : "rgba(26,26,26,0.35)"};
+`;
+
+export const LotePrice = styled.span<{
+  $active?: boolean;
+  $disabled?: boolean;
+}>`
+  font-family: ${({ theme }) => theme.fonts.display};
+  font-variation-settings:
+    "wght" 700,
+    "opsz" 72,
+    "SOFT" 100;
+  font-size: 16px;
+  color: ${({ $disabled, $active, theme }) =>
+    $disabled
+      ? "rgba(26,26,26,0.25)"
+      : $active
+        ? theme.colors.verde
+        : theme.colors.preto};
+`;
+
+export const LotesDisclaimer = styled.p`
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: 11px;
+  font-weight: ${({ theme }) => theme.fontWeights.semibold};
+  color: rgba(26, 26, 26, 0.4);
+  margin-top: 12px;
+  line-height: 1.6;
+`;
+
+export const LotesCtaBtn = styled(motion.a)`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: 14px;
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  color: ${({ theme }) => theme.colors.branco};
+  background-color: ${({ theme }) => theme.colors.terracota};
+  padding: 14px 28px;
+  border-radius: ${({ theme }) => theme.borderRadius.pill};
+  margin-top: 24px;
+  align-self: flex-start;
+  cursor: pointer;
+  transition:
+    background-color ${({ theme }) => theme.transitions.fast},
+    transform ${({ theme }) => theme.transitions.fast};
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.terracotaLt};
+    transform: translateY(-2px);
+  }
+`;
+
+export const LotesImageCol = styled(motion.div)`
+  flex: 0 0 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: ${({ theme }) => theme.borderRadius.lg};
+    box-shadow: 0 12px 48px rgba(44, 74, 46, 0.15);
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 340px;
+  }
 `;

@@ -122,8 +122,7 @@ function Footer() {
       <FooterBottom>
         <FooterBottomInner>
           <FooterCopy>
-            © 2026 Nossa Feira — Estancia Turismo e Eventos LTDA. Todos os
-            direitos reservados.
+            © 2026 Nossa Feira — Teia de Eventos. Todos os direitos reservados.
           </FooterCopy>
           <FooterLocation>Nova Friburgo, RJ</FooterLocation>
         </FooterBottomInner>

@@ -6,7 +6,6 @@ import {
   HeroContent,
   HeroEyebrow,
   HeroSub,
-  FloatingLeaf,
   CountdownWrapper,
   CountdownUnit,
   CountdownNumber,
@@ -70,7 +69,29 @@ import {
   OverlayTitle,
   OverlayText,
   ScheduleBody,
+  // SebraeSection,
+  // SebraeInner,
+  // SebraeImage,
+  // SebraeText,
+  // SebraeParagraph,
+  // SebraeList,
+  // SebraeListItem,
+  // SebraeLink,
+  FloatingImg,
+  LotesSection,
+  LotesInner,
+  LotesTextCol,
+  LotesParagraph,
+  LotesTable,
+  LoteRow,
+  LoteLabel,
+  LoteStatus,
+  LotePrice,
+  LotesDisclaimer,
+  LotesCtaBtn,
+  LotesImageCol,
 } from "./styles";
+import { Highlight } from "../../components/NossaHighlight";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -244,18 +265,34 @@ function Home() {
       <HeroWrapper>
         <HeroBgImage />
 
-        <FloatingLeaf $top="12%" $left="6%" $delay="0s">
-          🌿
-        </FloatingLeaf>
-        <FloatingLeaf $top="70%" $left="4%" $delay="1.5s">
-          🍃
-        </FloatingLeaf>
-        <FloatingLeaf $top="20%" $left="90%" $delay="0.8s">
-          🌱
-        </FloatingLeaf>
-        <FloatingLeaf $top="75%" $left="88%" $delay="2.2s">
-          🌿
-        </FloatingLeaf>
+        <FloatingImg
+          $src={"/images/corredor-principal.jpeg"}
+          $top="20%"
+          $left="2%"
+          $delay="0s"
+          $size="130px"
+        />
+        <FloatingImg
+          $src={"/images/atracao-musical.jpeg"}
+          $top="70%"
+          $left="5%"
+          $delay="1.5s"
+          $size="150px"
+        />
+        <FloatingImg
+          $src={"/images/stand.jpeg"}
+          $top="18%"
+          $left="80%"
+          $delay="0.8s"
+          $size="130px"
+        />
+        <FloatingImg
+          $src={"/images/praca-de-alimentacao.jpeg"}
+          $top="68%"
+          $left="85%"
+          $delay="2.2s"
+          $size="160px"
+        />
 
         <HeroContent variants={stagger} initial="hidden" animate="visible">
           <HeroEyebrow variants={fadeUp} custom={0}>
@@ -343,13 +380,13 @@ function Home() {
           >
             <SectionTag>Sobre o evento</SectionTag>
             <AboutQuote>
-              "Porque a feira é nossa,{"\n"}e é de todos."
+              "Porque a feira é <Highlight text="Nossa" />,{"\n"}e é de todos."
             </AboutQuote>
             <AboutParagraph>
-              A Nossa Feira nasceu com uma missão simples: celebrar o que é
-              feito aqui. Um espaço onde o empreendedor friburguense encontra
-              seu público, onde famílias passam horas descobrindo novidades, e
-              onde a cidade inteira vira vitrine.
+              A <Highlight text="Nossa Feira" /> nasceu com uma missão simples:
+              celebrar o que é feito aqui. Um espaço onde o empreendedor
+              friburguense encontra seu público, onde famílias passam horas
+              descobrindo novidades, e onde a cidade inteira vira vitrine.
             </AboutParagraph>
             <AboutParagraph>
               São 5 dias de negócios, cultura, gastronomia e muita música — com
@@ -385,6 +422,90 @@ function Home() {
         </AboutInner>
       </AboutSection>
 
+      {/* ── Lotes ── */}
+      <LotesSection>
+        <LotesInner>
+          <LotesTextCol
+            initial={{ opacity: 0, x: -32 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <SectionTag>Seja Expositor</SectionTag>
+            <SectionTitle
+              style={{ color: "var(--verde)" } as React.CSSProperties}
+            >
+              Garanta seu estande
+              <br />
+              antes que os lotes acabem
+            </SectionTitle>
+            <LotesParagraph>
+              Os estandes são vendidos por m² em lotes com preços progressivos.
+              Quanto antes você garantir, mais econômico fica. O 1º lote está
+              quase acabando! Não perca a oportunidade de participar por um
+              preço especial.
+            </LotesParagraph>
+
+            <LotesTable>
+              <LoteRow $active>
+                <LoteLabel $active>
+                  1º Lote
+                  <LoteStatus $active>Atual</LoteStatus>
+                </LoteLabel>
+                <LotePrice $active>R$ 455,00/m²</LotePrice>
+              </LoteRow>
+              <LoteRow>
+                <LoteLabel>
+                  2º Lote
+                  <LoteStatus>Em breve</LoteStatus>
+                </LoteLabel>
+                <LotePrice>R$ 505,00/m²</LotePrice>
+              </LoteRow>
+              <LoteRow>
+                <LoteLabel>
+                  3º Lote
+                  <LoteStatus>Em breve</LoteStatus>
+                </LoteLabel>
+                <LotePrice>R$ 555,00/m²</LotePrice>
+              </LoteRow>
+              <LoteRow>
+                <LoteLabel>
+                  4º Lote
+                  <LoteStatus>Em breve</LoteStatus>
+                </LoteLabel>
+                <LotePrice>R$ 605,00/m²</LotePrice>
+              </LoteRow>
+            </LotesTable>
+
+            <LotesDisclaimer>
+              * Outras taxas burocráticas poderão ser somadas ao valor total.
+            </LotesDisclaimer>
+
+            <LotesCtaBtn
+              href="https://wa.me/5522988293467"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              Quero garantir meu estande →
+            </LotesCtaBtn>
+          </LotesTextCol>
+
+          <LotesImageCol
+            initial={{ opacity: 0, x: 32 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <img
+              src={"/images/nossa-feira-lotes.jpg"}
+              alt="Tabela de lotes Nossa Feira 2026"
+            />
+          </LotesImageCol>
+        </LotesInner>
+      </LotesSection>
+
       {/* ── Categories ── */}
       <CategoriesSection>
         <CategoriesInner>
@@ -396,7 +517,8 @@ function Home() {
             variants={fadeUp}
             style={{ color: "var(--verde)" } as React.CSSProperties}
           >
-            Centenas de expositores,{"\n"}toda a diversidade da cidade
+            Centenas de expositores e{"\n"}o que há de melhor em diversidade na
+            <Highlight text=" Nossa" /> cidade
           </SectionTitle>
 
           <CategoriesGrid
@@ -506,6 +628,60 @@ function Home() {
           </InfoGrid>
         </InfoInner>
       </InfoSection>
+
+      {/* ── Movimenta SEBRAE ── */}
+      {/* <SebraeSection>
+        <SebraeInner>
+          <SebraeImage
+            initial={{ opacity: 0, x: -32 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <img
+              src={"/images/movimenta-sebrae.jpeg"}
+              alt="Movimenta SEBRAE na Nossa Feira"
+            />
+          </SebraeImage>
+
+          <SebraeText
+            initial={{ opacity: 0, x: 32 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <SectionTag>Evento Paralelo</SectionTag>
+            <SectionTitle style={{ color: "inherit" }}>
+              Movimenta SEBRAE
+            </SectionTitle>
+            <SebraeParagraph>
+              Programação especial do SEBRAE Rio dentro da Nossa Feira:
+              palestras práticas, atendimento com especialistas, soluções
+              financeiras, Empório de empreendedores, Shopping MEI e
+              experiências interativas — impressão 3D, drones, produção de
+              conteúdo e muito mais.
+            </SebraeParagraph>
+            <SebraeList>
+              <SebraeListItem>
+                Totalmente gratuito para quem empreende ou quer começar
+              </SebraeListItem>
+              <SebraeListItem>
+                Conteúdo sobre gestão, vendas, inovação e formalização
+              </SebraeListItem>
+              <SebraeListItem>
+                Conexões reais para impulsionar negócios locais
+              </SebraeListItem>
+            </SebraeList>
+            <SebraeLink
+              href="https://sebraerj.com.br/movimenta/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Saiba mais →
+            </SebraeLink>
+          </SebraeText>
+        </SebraeInner>
+      </SebraeSection> */}
 
       {/* ── CTA Band ── */}
       <CtaBand>

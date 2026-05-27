@@ -86,7 +86,7 @@ export const FooterColTitle = styled.p`
   font-family: ${({ theme }) => theme.fonts.body};
   font-size: 10px;
   font-weight: ${({ theme }) => theme.fontWeights.bold};
-  color: ${({ theme }) => theme.colors.terracotaLt};
+  color: ${({ theme }) => theme.colors.terracota};
   letter-spacing: 2.5px;
   text-transform: uppercase;
 `;
