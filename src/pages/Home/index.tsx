@@ -423,7 +423,7 @@ function Home() {
       </AboutSection>
 
       {/* ── Lotes ── */}
-      <LotesSection>
+      {/* <LotesSection>
         <LotesInner>
           <LotesTextCol
             initial={{ opacity: 0, x: -32 }}
@@ -504,7 +504,7 @@ function Home() {
             />
           </LotesImageCol>
         </LotesInner>
-      </LotesSection>
+      </LotesSection> */}
 
       {/* ── Categories ── */}
       <CategoriesSection>
