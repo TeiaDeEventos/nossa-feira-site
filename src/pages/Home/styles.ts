@@ -394,11 +394,11 @@ export const SupportChip = styled.span`
 
 export const AboutImageGrid = styled(motion.div)`
   flex: 1;
-  min-width: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  border-radius: ${({ theme }) => theme.borderRadius.lg};
+  border-radius: ${({ theme }) => theme.borderRadius.md};
   overflow: hidden;
 `;
 
