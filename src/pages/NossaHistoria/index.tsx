@@ -65,7 +65,7 @@ const TIMELINE = [
   {
     year: "2026",
     edition: "3ª Edição",
-    text: "De 4 a 8 de setembro, a Nossa Feira chega à sua terceira edição com entrada gratuita e tudo o que a cidade tem de melhor. Mais expositores, mais música, mais Friburgo.",
+    text: "De 29 de julho a 02 de agosto, a Nossa Feira chega à sua terceira edição com entrada gratuita e tudo o que a cidade tem de melhor. Mais expositores, mais música, mais Friburgo.",
     stat: "Em breve",
   },
 ];
