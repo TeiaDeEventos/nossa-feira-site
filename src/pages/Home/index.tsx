@@ -380,7 +380,7 @@ function Home() {
           >
             <SectionTag>Sobre o evento</SectionTag>
             <AboutQuote>
-              "Porque a feira é <Highlight text="Nossa" />,{"\n"}e é de todos."
+              "Porque a feira é <Highlight text="Nossa" />,{"\n"}e é de todos"
             </AboutQuote>
             <AboutParagraph>
               A <Highlight text="Nossa Feira" /> nasceu com uma missão simples:
