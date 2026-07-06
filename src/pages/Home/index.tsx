@@ -78,18 +78,17 @@ import {
   // SebraeListItem,
   // SebraeLink,
   FloatingImg,
-  // LotesSection,
-  // LotesInner,
-  // LotesTextCol,
-  // LotesParagraph,
-  // LotesTable,
-  // LoteRow,
-  // LoteLabel,
-  // LoteStatus,
-  // LotePrice,
-  // LotesDisclaimer,
-  // LotesCtaBtn,
-  // LotesImageCol,
+  LotesSection,
+  LotesInner,
+  LotesTextCol,
+  LotesParagraph,
+  LotesTable,
+  LoteRow,
+  LoteLabel,
+  LotePrice,
+  LotesDisclaimer,
+  LotesCtaBtn,
+  LotesImageCol,
 } from "./styles";
 import { Highlight } from "../../components/NossaHighlight";
 
@@ -165,6 +164,16 @@ const SCHEDULE: Record<DayKey, { time: string; name: string; type: string }[]> =
         name: "Programação a confirmar",
         type: "Fique ligado!",
       },
+      {
+        time: "Em breve",
+        name: "Programação a confirmar",
+        type: "Fique ligado!",
+      },
+      {
+        time: "Em breve",
+        name: "Programação a confirmar",
+        type: "Fique ligado!",
+      },
     ],
     d4: [
       {
@@ -172,8 +181,28 @@ const SCHEDULE: Record<DayKey, { time: string; name: string; type: string }[]> =
         name: "Programação a confirmar",
         type: "Fique ligado!",
       },
+      {
+        time: "Em breve",
+        name: "Programação a confirmar",
+        type: "Fique ligado!",
+      },
+      {
+        time: "Em breve",
+        name: "Programação a confirmar",
+        type: "Fique ligado!",
+      },
     ],
     d5: [
+      {
+        time: "Em breve",
+        name: "Programação a confirmar",
+        type: "Fique ligado!",
+      },
+      {
+        time: "Em breve",
+        name: "Programação a confirmar",
+        type: "Fique ligado!",
+      },
       {
         time: "Em breve",
         name: "Programação a confirmar",
@@ -422,8 +451,8 @@ function Home() {
         </AboutInner>
       </AboutSection>
 
-      {/* ── Lotes ── */}
-      {/* <LotesSection>
+    {/* ── Tabela de Valores ── */}
+      <LotesSection>
         <LotesInner>
           <LotesTextCol
             initial={{ opacity: 0, x: -32 }}
@@ -437,48 +466,44 @@ function Home() {
             >
               Garanta seu estande
               <br />
-              antes que os lotes acabem
+              na Nossa Feira
             </SectionTitle>
             <LotesParagraph>
-              Os estandes são vendidos por m² em lotes com preços progressivos.
-              Quanto antes você garantir, mais econômico fica. O 1º lote está
-              quase acabando! Não perca a oportunidade de participar por um
-              preço especial.
+              Os estandes são vendidos por m², com opções que vão do piso sem
+              montagem até estruturas cenográficas completas com mobiliário
+              especial e serviços. Escolha o formato ideal para o seu negócio.
             </LotesParagraph>
 
             <LotesTable>
-              <LoteRow $active>
-                <LoteLabel $active>
-                  1º Lote
-                  <LoteStatus $active>Atual</LoteStatus>
-                </LoteLabel>
-                <LotePrice $active>R$ 455,00/m²</LotePrice>
+              <LoteRow $variant="dark">
+                <LoteLabel>Piso sem montagem</LoteLabel>
+                <LotePrice>M²: R$ 416,00</LotePrice>
               </LoteRow>
-              <LoteRow>
-                <LoteLabel>
-                  2º Lote
-                  <LoteStatus>Em breve</LoteStatus>
-                </LoteLabel>
-                <LotePrice>R$ 505,00/m²</LotePrice>
+              <LoteRow $variant="light">
+                <LoteLabel>Estande com montagem básica em octanorme</LoteLabel>
+                <LotePrice>M²: R$ 500,00</LotePrice>
               </LoteRow>
-              <LoteRow>
+              <LoteRow $variant="dark">
                 <LoteLabel>
-                  3º Lote
-                  <LoteStatus>Em breve</LoteStatus>
+                  Estande com montagem diferenciada em vidro e octanorme
                 </LoteLabel>
-                <LotePrice>R$ 555,00/m²</LotePrice>
+                <LotePrice>M²: R$ 800,00</LotePrice>
               </LoteRow>
-              <LoteRow>
+              <LoteRow $variant="light">
+                <LoteLabel>Estande com montagem cenográfica + Mobiliário</LoteLabel>
+                <LotePrice>M²: R$ 1.000,00</LotePrice>
+              </LoteRow>
+              <LoteRow $variant="dark">
                 <LoteLabel>
-                  4º Lote
-                  <LoteStatus>Em breve</LoteStatus>
+                  Estande com montagem cenográfica, mobiliário especial e serviços
                 </LoteLabel>
-                <LotePrice>R$ 605,00/m²</LotePrice>
+                <LotePrice>M²: R$ 1.200,00</LotePrice>
               </LoteRow>
             </LotesTable>
 
             <LotesDisclaimer>
-              * Outras taxas burocráticas poderão ser somadas ao valor total.
+              * Outras taxas burocráticas municipais poderão ser somadas ao valor
+              total.
             </LotesDisclaimer>
 
             <LotesCtaBtn
@@ -499,12 +524,12 @@ function Home() {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <img
-              src={"/images/nossa-feira-lotes.jpg"}
-              alt="Tabela de lotes Nossa Feira 2026"
+              src={"/images/nossa-feira-lotes.jpeg"}
+              alt="Tabela de valores por área do estande Nossa Feira 2026"
             />
           </LotesImageCol>
         </LotesInner>
-      </LotesSection> */}
+      </LotesSection>
 
       {/* ── Categories ── */}
       <CategoriesSection>

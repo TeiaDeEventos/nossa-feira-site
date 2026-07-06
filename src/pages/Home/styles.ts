@@ -872,7 +872,7 @@ export const SebraeLink = styled.a`
   }
 `;
 
-// ─── Lotes ────────────────────────────────────────────────────────────────────
+// ─── Tabela de Valores ────────────────────────────────────────────────────────
 
 export const LotesSection = styled.section`
   background-color: ${({ theme }) => theme.colors.creme};
@@ -914,75 +914,39 @@ export const LotesParagraph = styled.p`
 export const LotesTable = styled.div`
   display: flex;
   flex-direction: column;
-  border-radius: ${({ theme }) => theme.borderRadius.lg};
+  border-radius: ${({ theme }) => theme.borderRadius.md};
   overflow: hidden;
-  border: 1.5px solid rgba(44, 74, 46, 0.12);
 `;
 
-export const LoteRow = styled.div<{ $active?: boolean; $disabled?: boolean }>`
+export const LoteRow = styled.div<{ $variant: "dark" | "light" }>`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 20px;
-  border-bottom: 1px solid rgba(44, 74, 46, 0.08);
-  background-color: ${({ $active, $disabled, theme }) =>
-    $active
-      ? `${theme.colors.verdeLt}22`
-      : $disabled
-        ? "rgba(0,0,0,0.03)"
-        : theme.colors.cremeLt};
-
-  &:last-child {
-    border-bottom: none;
-  }
+  gap: 24px;
+  padding: 20px 24px;
+  background-color: ${({ $variant, theme }) =>
+    $variant === "dark" ? theme.colors.preto : theme.colors.verdeLt};
 `;
 
-export const LoteLabel = styled.span<{
-  $active?: boolean;
-  $disabled?: boolean;
-}>`
+export const LoteLabel = styled.span`
   font-family: ${({ theme }) => theme.fonts.body};
   font-size: 13px;
   font-weight: ${({ theme }) => theme.fontWeights.bold};
-  color: ${({ $disabled, theme }) =>
-    $disabled ? "rgba(26,26,26,0.3)" : theme.colors.verde};
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
+  color: ${({ theme }) => theme.colors.cremeLt};
+  line-height: 1.4;
 `;
 
-export const LoteStatus = styled.span<{ $active?: boolean }>`
-  font-size: 10px;
-  font-weight: ${({ theme }) => theme.fontWeights.bold};
-  font-family: ${({ theme }) => theme.fonts.body};
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 3px 8px;
-  border-radius: ${({ theme }) => theme.borderRadius.pill};
-  background-color: ${({ $active, theme }) =>
-    $active ? theme.colors.verde : "rgba(26,26,26,0.08)"};
-  color: ${({ $active, theme }) =>
-    $active ? theme.colors.cremeLt : "rgba(26,26,26,0.35)"};
-`;
-
-export const LotePrice = styled.span<{
-  $active?: boolean;
-  $disabled?: boolean;
-}>`
+export const LotePrice = styled.span`
   font-family: ${({ theme }) => theme.fonts.display};
   font-variation-settings:
-    "wght" 700,
+    "wght" 500,
     "opsz" 72,
     "SOFT" 100;
-  font-size: 16px;
-  color: ${({ $disabled, $active, theme }) =>
-    $disabled
-      ? "rgba(26,26,26,0.25)"
-      : $active
-        ? theme.colors.verde
-        : theme.colors.preto};
+  font-size: 15px;
+  color: ${({ theme }) => theme.colors.cremeLt};
+  opacity: 0.9;
+  white-space: nowrap;
 `;
 
 export const LotesDisclaimer = styled.p`

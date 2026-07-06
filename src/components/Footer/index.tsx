@@ -62,7 +62,7 @@ const NAV_LINKS = [
 const CONTACT = [
   { label: "Telefone", value: "(22) 2522-6942" },
   { label: "WhatsApp", value: "(22) 98829-3467" },
-  { label: "E-mail", value: "contato@teiadeeventos.com.br" },
+  { label: "E-mail", value: "contato@estanciacampestre.com.br " },
   {
     label: "Endereço",
     value:
@@ -75,7 +75,7 @@ function Footer() {
     <FooterWrapper>
       <FooterTop>
         <FooterBrand>
-          <FooterTeiaLogo src={"/logo.svg"} alt="Teia de Eventos" />
+          <FooterTeiaLogo src={"/logo.svg"} alt="Estância Campestre" />
           <FooterBrandText>
             Cinco dias de negócios, cultura, gastronomia e muita música — com a
             cara e o coração de Nova Friburgo.
@@ -122,7 +122,7 @@ function Footer() {
       <FooterBottom>
         <FooterBottomInner>
           <FooterCopy>
-            © 2026 Nossa Feira — Teia de Eventos. Todos os direitos reservados.
+            © 2026 Nossa Feira — Estância Campestre. Todos os direitos reservados.
           </FooterCopy>
           <FooterLocation>Nova Friburgo, RJ</FooterLocation>
         </FooterBottomInner>
