@@ -477,17 +477,17 @@ function Home() {
             <LotesTable>
               <LoteRow $variant="dark">
                 <LoteLabel>Piso sem montagem</LoteLabel>
-                <LotePrice>M²: R$ 416,00</LotePrice>
+                <LotePrice>M²: R$ 615,00</LotePrice>
               </LoteRow>
               <LoteRow $variant="light">
                 <LoteLabel>Estande com montagem básica em octanorme</LoteLabel>
-                <LotePrice>M²: R$ 500,00</LotePrice>
+                <LotePrice>M²: R$ 700,00</LotePrice>
               </LoteRow>
               <LoteRow $variant="dark">
                 <LoteLabel>
                   Estande com montagem diferenciada em vidro e octanorme
                 </LoteLabel>
-                <LotePrice>M²: R$ 800,00</LotePrice>
+                <LotePrice>M²: R$ 890,00</LotePrice>
               </LoteRow>
               <LoteRow $variant="light">
                 <LoteLabel>Estande com montagem cenográfica + Mobiliário</LoteLabel>
